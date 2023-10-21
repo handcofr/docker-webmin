@@ -16,6 +16,8 @@ COPY	conf/setup.exp setup.exp
 RUN 	/usr/bin/expect ./setup.exp && \
 	rm setup.exp && \
 	apk del expect
+RUN 	apk add procps python3 && \
+	wget https://raw.githubusercontent.com/christgau/wsdd/master/src/wsdd.py
 
 VOLUME	["/etc/webmin" , "/var/webmin"]
 
